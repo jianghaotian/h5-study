@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+    <style>
+        body{padding-left: 50px;}
+        p{
+            font-size:25px;
+            font-weight:bold;
+            color: blue;
+        }
+        div{
+            width: 300px;
+            height: 200px;
+            outline: 1px solid black;
+            margin-top: 10px;
+        }
+        .div1 {
+            background: linear-gradient(red, yellow, green);/*省略方向 省略 stop点*/
+        } 
+        .div2{
+            background: linear-gradient(to bottom left,red,yellow, green);/*省略 stop点*/
+        }
+        .div3{
+            background: linear-gradient(to bottom left,red 20%,yellow 40%, green);/*方向为关键字*/
+        }
+        .div4{
+            background: linear-gradient(60deg ,red, yellow, green);
+        }
+    </style>
+</head>
+<body>
+	<p>background: linear-gradient(red ,yellow,green);</p>
+	<div class="div1"></div>
+	<hr/>
+	<p> background: linear-gradient(to bottom left,red,yellow, green);</p>
+	<div class="div2"></div>
+	<hr/>
+	<p>background: linear-gradient(to bottom left,red 20%,yellow 40%, green);</p>
+	<div class="div3"></div>
+	<hr/>
+	<p>background: linear-gradient(60deg, red, yellow, green);</p>
+	<div class="div4"></div>
+</body>
+</html>

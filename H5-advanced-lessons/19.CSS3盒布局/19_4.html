@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+	#main {
+	  width: 400px;
+	  height: 350px;
+	  border: 1px solid #c3c3c3;
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+	
+	#main div {
+	  width: 100px;
+	  height: 100px;
+	}
+</style>
+</head>
+<body>
+
+<div id="main">
+  	<div style="background-color:coral;">A</div>
+  	<div style="background-color:lightblue;">B</div>
+  	<div style="background-color:khaki;">C</div>
+  	<div style="background-color:pink;">D</div>
+  	<div style="background-color:lightgrey;">E</div>
+  	<div style="background-color:lightgreen;">F</div>
+</div>
+<button onclick="myFunction1()">nowrap</button>
+<button onclick="myFunction2()">wrap-reverse</button>
+
+<script>
+	function myFunction1()
+	{
+		document.getElementById("main").style.flexWrap = "nowrap";
+	}
+	function myFunction2()
+	{
+		document.getElementById("main").style.flexWrap = "wrap-reverse";
+	}
+</script>
+
+</body>
+</html>

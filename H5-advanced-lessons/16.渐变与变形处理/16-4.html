@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>径向渐变</title>
+    <style>
+        span{
+            font-weight: bold;
+            color: red;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            border:1px solid pink;
+            margin: 10px 0;
+        }
+        .div1{
+            background: radial-gradient( 50% 50%,red 0%, yellow 20%,black 50%,green 80%, yellow);
+        }
+        .div2{
+            background: radial-gradient(circle at 50% 50%,red 0%, yellow 20%,black 50%,green 80%, yellow);
+        }
+        .div3{
+            background: radial-gradient(circle at top left,red 0%, yellow 20%,black 50%,green 80%, yellow);
+        }
+        .div4{
+            background: radial-gradient(circle at -10% 50%,red 0%, yellow 20%,black 50%,green 80%, yellow);
+        }
+    </style>
+</head>
+<body>
+	<p>background: radial-gradient(<span>50% 50%,</span>red 0%, yellow 20%,black 50%,green 80%, yellow);</p>
+	<div class="div1"></div>
+	<hr/>
+	<p>background: radial-gradient(<span>circle at 50% 50%,</span>red 0%, yellow 20%,black 50%,green 80%, yellow)</p>
+	<div class="div2"></div>
+	<hr/>
+	<p>background: radial-gradient(<span>circle at top left,</span>red 0%, yellow 20%,black 50%,green 80%, yellow)</p>
+	<div class="div3"></div>
+	<hr/>
+	<p>background: radial-gradient(<span>circle at -10% 50%,</span>red 0%, yellow 20%,black 50%,green 80%, yellow)</p>
+	<div class="div4"></div>
+	<hr/>
+</body>
+</html>

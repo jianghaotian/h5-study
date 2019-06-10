@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>幻灯片</title>
+    <style>
+        *{padding:0;margin:0;}
+        .b0 {
+            overflow: hidden;
+            width: 680px;
+            height: 320px;
+            border: 5px solid #eaeaea;
+            margin: 150px auto auto auto;
+            position: relative;
+        }
+
+        .a1 {
+            animation: a11 20s linear infinite;
+            position: absolute;
+        }
+        @keyframes a11{
+            0%{top:0;left:0;opacity:1;}
+            15%{top:0;left:0;opacity:1;}
+            20%{top:325px;left:0;opacity:0;}
+            35%{top:325px;left:0;opacity:0;}
+            40%{top:216px;left:0;opacity:0;}
+            55%{top:216px;left:0;opacity:0;}
+            60%{top:-216px;left:0;opacity:0;}
+            75%{top:-216px;left:0;opacity:0;}
+            80%{top:-325px;left:0;opacity:0;}
+            95%{top:-325px;left:0;opacity:0;}
+            100%{top:0;left:0;opacity:1;}
+        }
+
+        .a2{
+            animation:a22 20s linear infinite;
+            position:absolute;
+        }
+
+        @keyframes a22{
+            0%{top:-325px;left:0;opacity:0;}
+            15%{top:-325px;;left:0;opacity:0;}
+            20%{top:0;left:0;opacity:1;}
+            35%{top:0;left:0;opacity:1;}
+            40%{top:325px;left:0;opacity:0;}
+            55%{top:325px;left:0;opacity:0;}
+            60%{top:216px;left:0;opacity:0;}
+            75%{top:216px;left:0;opacity:0;}
+            80%{top:-216px;left:0;opacity:0;}
+            95%{top:-216px;left:0;opacity:0;}
+            100%{top:-325px;left:0;opacity:0;}
+        }
+
+        .a3 {
+            animation: a33 20s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes a33{
+            0%{top:-216px;left:0;opacity:0;}
+            15%{top:-216px;left:0;opacity:0;}
+            20%{top:-325px;left:0;opacity:0;}
+            35%{top:-325px;left:0;opacity:0;}
+            40%{top:0;left:0;opacity:1;}
+            55%{top:0;left:0;opacity:1;}
+            60%{top:325px;left:0;opacity:0;}
+            75%{top:325px;left:0;opacity:0;}
+            80%{top:216px;left:0;opacity:0;}
+            95%{top:216px;left:0;opacity:0;}
+            100%{top:-216px;left:0;opacity:0;}
+        }
+
+        .a4 {
+            animation: a44 20s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes a44{
+            0%{top:216px;left:0;opacity:0;}
+            15%{top:216px;left:0;opacity:0;}
+            20%{top:-216px;left:0;opacity:0;}
+            35%{top:-216px;left:0;opacity:0;}
+            40%{top:-325px;left:0;opacity:0;}
+            55%{top:-325px;left:0;opacity:0;}
+            60%{top:0;left:0;opacity:1;}
+            75%{top:0;left:0;opacity:1;}
+            80%{top:325px;left:0;opacity:0;}
+            95%{top:325px;left:0;opacity:0;}
+            100%{top:216px;left:0;opacity:0;}
+        }
+
+        .a5 {
+            animation: a55 20s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes a55{
+            0%{top:325px;left:0;opacity:0;}
+            15%{top:325px;left:0;opacity:0;}
+            20%{top:216px;left:0;opacity:0;}
+            35%{top:216px;left:0;opacity:0;}
+            40%{top:-216px;left:0;opacity:0;}
+            55%{top:-216px;left:0;opacity:0;}
+            60%{top:-325px;left:0;opacity:0;}
+            75%{top:-325px;left:0;opacity:0;}
+            80%{top:0;left:0;opacity:1;}
+            95%{top:0;left:0;opacity:1;}
+            100%{top:325px;left:0;opacity:0;}
+
+        }
+    </style>
+</head>
+<body>
+<div class="b0">
+    <img  class="a1" src="images/img_1.jpg"/>
+    <img  class="a2" src="images/img_2.jpg"/>
+    <img  class="a3" src="images/img_3.jpg"/>
+    <img  class="a4" src="images/img_4.jpg"/>
+    <img  class="a5" src="images/img_5.jpg"/>
+</div>
+</body>
+</html>

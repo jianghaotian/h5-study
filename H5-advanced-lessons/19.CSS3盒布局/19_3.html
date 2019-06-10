@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flex-direction</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{padding: 20px;}
+        p{
+            font-weight: bold;
+            font-size: 20px;
+            color: blue;margin: 5px 0;
+        }
+        ul{
+            list-style: none;
+            outline: 1px solid red;
+            width:600px;
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .u1{
+            flex-direction: row;
+        }
+        .u2{
+            flex-direction: row-reverse;
+        }
+        .u3{
+            flex-direction: column;
+        }
+        .u4{
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+<body>
+<p> flex-direction: row;</p>
+<ul class="u1">
+    <li><img src="images/icon-1.png" alt=""/></li>
+    <li><img src="images/icon-2.png" alt=""/></li>
+    <li><img src="images/icon-3.png" alt=""/></li>
+    <li><img src="images/icon-4.png" alt=""/></li>
+</ul>
+<p> flex-direction: row-reverse;</p>
+<ul class="u2">
+    <li><img src="images/icon-1.png" alt=""/></li>
+    <li><img src="images/icon-2.png" alt=""/></li>
+    <li><img src="images/icon-3.png" alt=""/></li>
+    <li><img src="images/icon-4.png" alt=""/></li>
+</ul>
+<p> flex-direction: column</p>
+<ul class="u3">
+    <li><img src="images/icon-1.png" alt=""/></li>
+    <li><img src="images/icon-2.png" alt=""/></li>
+    <li><img src="images/icon-3.png" alt=""/></li>
+    <li><img src="images/icon-4.png" alt=""/></li>
+</ul>
+<p> flex-direction: column-reverse;</p>
+<ul class="u4">
+    <li><img src="images/icon-1.png" alt=""/></li>
+    <li><img src="images/icon-2.png" alt=""/></li>
+    <li><img src="images/icon-3.png" alt=""/></li>
+    <li><img src="images/icon-4.png" alt=""/></li>
+</ul>
+</body>
+</html>

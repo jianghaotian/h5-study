@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>align-items</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{padding: 20px;}
+        p{
+            font-weight: bold;
+            font-size: 20px;
+            color: blue;margin: 5px 0;
+        }
+        div{
+            height:0;
+            border: 1px solid gray;
+            margin-top: -262px;
+        }
+        ul{
+            list-style: none;
+            outline: 1px solid red;
+            margin-bottom: 10px;
+            width:600px;
+            height:120px;
+            display: flex;
+            justify-content: space-around
+        }
+        ul li:nth-child(1){
+            width: 30px;
+            height: 50px;
+            background: yellow;
+        }
+        ul li:nth-child(2){
+            width: 30px;
+            height: 80px;
+            background: orange;
+        }
+        ul li:nth-child(3){
+            width: 30px;
+            height: 70px;
+            background: orangered;
+        }
+        ul li:nth-child(4){
+            width: 30px;
+            height: 90px;
+            background: orchid;
+        }
+        ul li:nth-child(5){
+            width: 30px;
+            height: 60px;
+            background: yellowgreen;
+        }
+        .u1{
+            align-items:flex-start;
+        }
+        .u2{
+            align-items:flex-end;
+        }
+        .u3{
+            align-items:center;
+        }
+        .u4{
+            align-items:baseline;
+        }
+        .u5{
+            align-items:stretch;
+        }
+        ul.u5 li{height: auto;}
+    </style>
+</head>
+<body>
+<p>align-items:flex-start;</p>
+<ul class="u1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<p>align-items:flex-end;</p>
+<ul class="u2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<p>align-items:center;</p>
+<ul class="u3">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<p>align-items:baseline;</p>
+<ul class="u4">
+    <li style="font-size: 16px;">text</li>
+    <li style="font-size: 28px;">text</li>
+    <li style="font-size: 20px;">text</li>
+    <li style="font-size: 24px;">text</li>
+    <li style="font-size: 22px;">text</li>
+</ul>
+
+<p>align-items:stretch;</p>
+<ul class="u5">
+    <li style="font-size: 20px;white-space: nowrap;">height: auto;</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<div></div>
+</body>
+</html>

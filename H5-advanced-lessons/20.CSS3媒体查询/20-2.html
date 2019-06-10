@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.gridheader{
+			background-color:#f1f1f1;
+		    border:1px solid #e9e9e9;
+		}
+	
+		.gridmenu{
+			margin-left: 1%;
+			width: 23%;
+			float: left;
+			background-color:Khaki;
+		}
+		.gridmain{
+			margin-left: 1%;
+			width: 50%;
+			float: left;
+			background-color:bisque;
+		}
+		.gridright{
+			margin-left: 1%;
+			width:23%;
+			float: left;
+			background-color:#CDF0F6;
+		}
+		.menuitem {
+		    margin:4%;
+		    margin-left:0;
+		    padding:4%;
+		    border-bottom:1px solid #e9e9e9;
+		    cursor:pointer;
+		}
+		img{
+			width: 80%;
+			display: block;
+			margin: 50px auto;
+		}
+		
+		.gridfooter{
+			text-align:center;
+		    background-color:#f1f1f1;
+		    border:1px solid #e9e9e9;
+		}
+		
+		@media only screen and (min-width: 500px) {
+			#main{
+				height: 550px;
+			}
+			.gridmenu{		
+				height: 550px;
+			}
+			.gridmain{
+				height: 550px;
+			}
+			.gridright{
+				height: 550px;
+			}
+		}
+		@media only screen and (max-width: 500px) {
+		    .gridmenu {
+		        width:100%;
+		    }
+		    .menuitem {
+		        margin:1%;
+		        padding:1%;
+		    }
+		    .gridmain {
+		        width:100%;
+		    }
+		    #main {
+		    	height: 800px;
+		        padding:1%;
+		    }
+		    .gridright {
+		        width:100%;
+		    }
+		    .right {
+		        padding:1%;
+		    }
+		}
+	</style>
+</head>
+<body>
+<div class="gridcontainer">
+    <div class="gridwrapper">
+    	<!--header部分-->
+        <div class="gridheader">
+            <div class="header">
+                <h1>
+                	HTML5程序设计基础
+                </h1>
+            </div>
+        </div>
+        <!--中间左侧menu部分-->
+        <div id="main">
+	        <div class="gridmenu">
+	            <div class="menuitem">HTML5</div>
+	            <div class="menuitem">CSS3</div>
+	            <div class="menuitem">Bootstrap</div>
+	            <div class="menuitem">Others</div>
+	        </div>
+	        <!--中间正文部分-->
+	        <div class="gridmain">
+				<h1>HTML5</h1>
+				<p>万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言（HTML）的第五次重大修改</p>
+				<img src="imgs/1.jpg" alt="html" >
+	        </div>
+	        <!--中间右侧部分-->
+	        <div class="gridright">
+				<h2>What?</h2>
+				<p>Hyper Text Markup Language.</p>
+				<h2>Where?</h2>
+				<p>In the website</p>
+				<h2>Price?</h2>
+				<p>The technology is free!</p>
+	        </div>
+        </div>
+        <!--footer部分-->
+        <div class="gridfooter">
+            <div class="footer">
+				<p>&copy;版权所有</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

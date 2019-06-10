@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>旋转</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            padding: 50px;
+        }
+        div {
+            width: 128px;
+            height: 128px;
+            line-height: 128px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            background: orange;
+            border-radius: 50%;
+        }
+        div:hover{
+            animation: myRotate 2s linear 1s;
+        }
+        img{
+            animation: myRotate 2s linear ;
+        }
+        @keyframes myRotate{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg)}
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        旋转
+    </div>
+    <img src="images/vinyl.png" />
+</body>
+</html>

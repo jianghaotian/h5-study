@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>skew</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{margin-left:150px;}
+        p{
+            font-size: 30px;
+            color: blue;
+            font-weight: bold;
+        }
+        span{
+            color: red;
+        }
+        div{
+            width: 100px;height: 100px;
+            background: red;
+        }
+        .div1:hover{
+            transform: skewX(20deg);
+        }
+        .div2{ 
+        	margin-left: 180px;
+        }
+        .div2:hover{
+            transform: skewY(20deg);
+        }
+        .div3:hover{
+            transform: skew(20deg,20deg);
+        }
+    </style>
+</head>
+<body>
+	<p>hover: <span>skewX</span>(20deg);</p>
+	<div class="div1"></div>
+	<p>hover: <span>skewY</span>(20deg);</p>
+	<div class="div2"></div>
+	<p>hover: <span>skew</span>(20deg,20deg);</p>
+	<div class="div3"></div>
+</body>
+</html>

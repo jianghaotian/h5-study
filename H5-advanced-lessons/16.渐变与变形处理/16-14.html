@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			padding: 100px;
+		}
+		#div1{
+			position: relative;
+			height: 200px;
+			width: 200px;
+			border: 1px solid black;
+		}
+		#div1-1{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background-color: rgba(200,0,0,0.5);
+			transform: rotate(20deg);
+			transform-origin:top right;
+		}
+		#div1-2{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background-color: rgba(200,0,0,0.5);
+			transform: rotate(-50deg);
+			transform-origin:0 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+  		<div id="div1-1">HELLO</div>
+	</div>
+	<br/>
+	<div id="div1">
+  		<div id="div1-2">HELLO</div>
+	</div>
+</body>
+</html>
