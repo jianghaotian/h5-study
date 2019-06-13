@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮奖</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            float: left;
+            width: 500px;
+            height: 200px;
+            margin-top: 10px;
+            margin-left: 10px;
+            text-align: center;
+        }
+        #prize{
+            color: red;
+            font-size: 80px;
+            line-height: 200px;
+            z-index: -1;
+            user-select: none;
+        }
+        #canvas{
+            float: left;
+            margin-left: 10px;
+            margin-top: -200px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span id="prize">谢谢惠顾</span>
+        <canvas id="canvas" width="500" height="200"></canvas>        
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var prize = document.getElementById("prize");
+    
+    context.fillStyle = '#aaaaaa';
+    context.fillRect(0,0,500,200);
+    context.fill();
+    context.globalCompositeOperation = 'destination-out';
+
+    // 一等奖    1
+    // 二等奖    2  3
+    // 三等奖    4  5  6
+    // 谢谢惠顾  7  8  9  10
+    var prizes = new Array('一等奖','二等奖','三等奖','谢谢惠顾');
+    var num = Math.floor(Math.random()*10+1);
+    var n = 3;
+    switch(num){
+        case 1:
+            n = 0;
+            break;
+        case 2:
+        case 3:
+            n = 1;
+            break;
+        case 4:
+        case 5:
+        case 6:
+            n = 2;
+            break;
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            n = 3;
+            break;
+    }
+    prize.innerHTML = prizes[n];
+
+    var mouse = false;
+    // 鼠标按下
+    canvas.onmousedown = function(e){
+        mouse = true;
+        x = e.clientX-10;
+        y = e.clientY-10;
+        context.beginPath();
+        context.arc(x, y, 30, 0, Math.PI * 2);
+        context.fill();
+        context.closePath();
+    }
+    var j=0;
+
+    //鼠标抬起
+    document.onmouseup = function(){
+        mouse = false;
+        j=0;
+        var a = context.getImageData(0,0,500,200)
+        for(var i=0;i<a.data.length;i+=4){
+            if(a.data[i]==0)
+                j++;
+        }
+        // 全部刮开
+        if(j > a.data.length/4*0.85){
+            context.clearRect(0,0,500,200);
+            // context.fillRect(0,0,500,200);
+            // context.fill();
+        }
+    }
+
+    // 鼠标移动
+    canvas.onmousemove = function(e){
+        if(mouse){
+            x = e.clientX-10;
+            y = e.clientY-10;
+            context.beginPath();
+            context.arc(x, y, 30, 0, Math.PI * 2);
+            context.fill();
+            context.closePath();
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>50个圆</title>
+    <style>
+        #canvas{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="800">
+        您的浏览器不支持 canvas 元素，请更换或更新浏览器
+    </canvas>
+    
+</body>
+<script>
+    var elem=document.getElementById('canvas');
+    var context=elem.getContext('2d');
+
+    for(var i=0; i<50; i++){
+        var x
+        var y
+        var r
+        var colorR
+        var colorG
+        var colorB
+
+        context.arc(x, y, r, 0, 2*Math.PI);
+        context.fillStyle = `rgba(${colorR},${colorG},${colorB},0.5)`;
+        context.fill();
+    }
+
+
+</script>
+</html>

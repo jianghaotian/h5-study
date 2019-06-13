@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>七巧板</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400">
+        您的浏览器不支持 canvas 元素，请更换或更新浏览器
+    </canvas>
+</body>
+<script>
+    var elem=document.getElementById('canvas');
+    var context=elem.getContext('2d');
+
+    context.beginPath();
+    context.moveTo(0,0);
+    context.lineTo(200,200);
+    context.lineTo(0,400);
+    context.fillStyle = "blue";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(0,0);
+    context.lineTo(200,200);
+    context.lineTo(400,0);
+    context.fillStyle = "green";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(0,400);
+    context.lineTo(100,300);
+    context.lineTo(200,400);
+    context.fillStyle = "fuchsia";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(100,300);
+    context.lineTo(200,400);
+    context.lineTo(300,300);
+    context.lineTo(200,200);
+    context.fillStyle = "purple";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(200,200);
+    context.lineTo(300,300);
+    context.lineTo(300,100);
+    context.fillStyle = "yellow";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(400,0);
+    context.lineTo(300,100);
+    context.lineTo(300,300);
+    context.lineTo(400,200);
+    context.fillStyle = "red";
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(200,400);
+    context.lineTo(400,200);
+    context.lineTo(400,400);
+    context.fillStyle = "gold";
+    context.closePath();
+    context.fill();
+
+</script>
+</html>

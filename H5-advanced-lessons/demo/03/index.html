@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #div{
+            height: 300px;
+            width: 300px;
+            border:1px solid gray;
+            padding: 5px;
+        }
+        img{
+            height: 300px;
+            width: 300px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <h3>上传头像</h3>
+    <div id="div" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+    
+</body>
+<script>
+    var div = document.getElementById("div");
+
+    document.ondragover = function(e){
+        e.preventDefault(); //使得ondrop可能触发
+    }
+    document.ondrop = function(e){
+        e.preventDefault();//阻止浏览器在新窗口中打开本地图片
+    }
+    
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var file = ev.dataTransfer.files[0];
+        if(!/image\/\w+/.test(file.type)) {
+	        alert("请确保文件为图像类型");
+	        return false;
+	    }
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(e) {
+	       div.innerHTML = '<img src="'+this.result+'" alt=""/>'
+	    }
+    }
+    // document.ondragover = function(e){
+    //     e.preventDefault();
+    //     e.dataTransfer.dropEffect = none;
+    // };
+
+
+</script>
+</html>

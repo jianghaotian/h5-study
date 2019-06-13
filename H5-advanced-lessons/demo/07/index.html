@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clock</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    function timer() {
+        context.clearRect(0, 0, 500, 500); // 清空画布
+        
+        // 表盘
+        context.beginPath();
+        context.lineWidth = 10;
+        context.strokeStyle = "greenyellow";
+        context.arc(250, 250, 210, 0, 2*Math.PI);
+        context.stroke();
+        context.closePath();
+
+        // 分针的刻度
+        for(var i=0; i<60; i++){
+            context.save();
+            context.beginPath();
+            context.translate(250, 250); // 设置0,0
+            context.rotate(6 * i * Math.PI / 180);
+            context.strokeStyle = "#000";
+            context.lineWidth = 4;
+            context.moveTo(0, 170);
+            context.lineTo(0, 185);
+            context.stroke();
+            context.closePath();
+            context.restore();
+        }
+
+        // 时针的刻度
+        for(var i=0; i<12; i++){
+            context.save();
+            context.beginPath();
+            context.translate(250, 250); // 设置0,0
+            context.rotate(30 * i * Math.PI / 180);
+            context.strokeStyle = "#f00";
+            context.lineWidth = 6;
+            context.moveTo(0, 160);
+            context.lineTo(0, 185);
+            context.stroke();
+            context.closePath();
+            context.restore();
+        }
+
+        // 12个数字刻度值
+        for(var i=0; i<12; i++){
+            context.save();
+            context.beginPath();
+            context.translate(250, 253); // 设置0,0
+            context.font = "20px 幼圆";
+            context.textAlign="center";
+            context.textBaseline = "middle";
+            context.fillText(i?i:12, 145 * Math.sin(i * Math.PI / 6), -145 * Math.cos(i * Math.PI / 6));
+            context.closePath();
+            context.restore();
+        }
+
+        // 获取当前时间
+        var date = new Date();
+        var hour = date.getHours();
+        var minu = date.getMinutes();
+        var sec = date.getSeconds();
+
+        // 时针
+        context.save();
+        context.beginPath();
+        context.translate(250, 250); // 设置0,0
+        context.rotate((hour * 30 + minu / 2) * Math.PI / 180);
+        context.strokeStyle = "purple";
+        context.lineWidth = 10;
+        context.moveTo(0, 15);
+        context.lineTo(0, -100);
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        // 分针
+        context.save();
+        context.beginPath();
+        context.translate(250, 250); // 设置0,0
+        context.rotate(minu * 6 * Math.PI / 180);
+        context.strokeStyle = "pink";
+        context.lineWidth = 6;
+        context.moveTo(0, 15);
+        context.lineTo(0, -130);
+        context.stroke();
+        context.closePath();
+        context.restore();
+
+        // 秒针
+        context.save();
+        context.beginPath();
+        context.translate(250, 250); // 设置0,0
+        context.rotate(sec * 6 * Math.PI / 180);
+        context.strokeStyle = "red";
+        context.lineWidth = 4;
+        context.moveTo(0, 20);
+        context.lineTo(0, -150);
+        context.stroke();
+        context.closePath();
+        // 秒针圆点
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(0, -115, 8, 0, 2*Math.PI);
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
+        context.fillStyle = "#000";
+        context.arc(0, -115, 3, 0, 2*Math.PI);
+        context.fill();
+        context.closePath();
+
+        context.restore();
+        // 秒针结束
+
+        // 中心圆点
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(250, 250, 8, 0, 2*Math.PI);
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
+        context.fillStyle = "#000";
+        context.arc(250, 250, 3, 0, 2*Math.PI);
+        context.fill();
+        context.closePath();
+
+
+    }
+    timer();
+    setInterval(timer, 1000);
+</script>
+</html>

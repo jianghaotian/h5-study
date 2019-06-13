@@ -1,0 +1,140 @@
+#box{
+    float: left;
+    position: relative;
+    width: 370px;
+    height: 435px;
+    border: 3px solid lightgray;
+    overflow: hidden;
+}
+
+#img{
+    position: absolute;
+    width: 370px;
+    height: 245px;
+    top: 0;
+    background: url(zhanqiao.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 370px 245px;
+    transform: translateY(0);
+    filter: brightness(1);
+    z-index: -1;
+    transition: background-size .5s ease-in-out,
+                transform .5s ease-in-out,
+                filter .5s ease-in-out;
+    
+}
+#box:hover #img{
+    background-size: 410px 285PX;
+    transform: translateY(-30px);
+    filter: brightness(0.6);
+
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+#circle{
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 23px;
+    background-color: #f66;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#circle span{
+    display: block;
+    margin-top: 14px;
+    text-align: center;
+    line-height: 1px;
+}
+
+#slide{
+    float: left;
+    width: 370px;
+    height: 285px;
+    margin-top: 220px;
+
+    transition-property: margin-top;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+#box:hover #slide{
+    margin-top: 100px;
+
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+
+}
+
+#picword{
+    float: left;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color: #f66;
+    color: #fff;
+    font-size: 12px;
+}
+
+#main{
+    float: left;
+    width: 330px;
+    height: 260px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fff;
+}
+
+#main p:nth-child(1){
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#main p:nth-child(2){
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #f66;
+}
+
+#main p:nth-child(3){
+    margin-top: 0;
+    line-height: 25px;
+    color: gray;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+#box:hover #main p:nth-child(3){
+    opacity: 1;
+
+    transition: opacity .2s ease-in-out;
+}
+
+#bottom{
+    width: 370px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    color: #a0a0a0;
+    line-height: 50px;
+    font-size: 12px;
+}
+
+#bottom span:first-child{
+    margin-left: 28px;
+    margin-right: 20px;
+}
+
+
+

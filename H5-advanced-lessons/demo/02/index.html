@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 400px;
+            padding-bottom: 30px;
+        }
+        #text{
+            width: 190px;
+            height: 35px;
+        }
+        #text:focus{
+            padding: 2px 1px;
+            outline: none;
+            border: 1px solid orange;
+        }
+        #search{
+            width: 140px;
+            height: 35px;
+            cursor:pointer;
+            color: #808080;
+        }
+        #data{
+            width: 360px;
+        }
+        #data>span{
+            display: inline-block;
+            border: 1px solid #D4D4D4;
+            background-color: #D3D3D3;
+            margin-top: 10px;
+            margin-right: 8px;
+            
+        }
+        #removeAll{
+            float: right;
+            width: 22px;
+            height: 22px;
+            margin-top: -22px;
+            text-align: center;
+            cursor:pointer;
+            color: #fff;
+            background-color: #D3D3D3;
+        }
+        #non{
+            display: block;
+            width: 360px;
+            text-align: center;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" name="name" placeholder="请输入想查找的商品" id="text"/>
+        <input type="button" value="搜索" id="search" />
+        <br>
+        <span>最近搜索</span>
+        <div id="data"></div>
+        <div id="non">无搜索记录！</div>
+        <div id="removeAll" title="清除全部搜索记录">X</div>
+    </div>
+</body>
+<script>
+    var text = document.getElementById('text');
+    var search = document.getElementById('search');
+    var data = document.getElementById('data');
+    var removeAll = document.getElementById('removeAll');
+    var non = document.getElementById('non');
+    var keyStr;
+    var valueStr;
+
+    function refresh() {
+        keyStr = [];
+        valueStr = [];
+        for(var i=0; i<localStorage.length; i++) {
+            keyStr.push(localStorage.key(i));
+        }
+        if(keyStr.length > 0) {
+            keyStr.sort();
+            for (var x=0; x<keyStr.length; x++) {
+                var newValue = localStorage.getItem(keyStr[x]).trim();
+                for(var y=0; y<valueStr.length; y++) {
+                    if(newValue == valueStr[y]) {
+                        localStorage.removeItem(keyStr[y]);
+                        refresh();
+                        return 0;
+                    }
+                }
+                valueStr.push(newValue);
+            }
+        }
+        while(keyStr.length > 10) {
+            keyStr.sort();
+            localStorage.removeItem(keyStr[0]);
+            keyStr.shift();
+            valueStr.shift();
+        }
+    }
+
+    function showData(v){
+        if(v.length>0) {
+            non.style.display = "none";
+            data.innerHTML = '';
+            for(var i=v.length-1; i>=0; i--) {
+                var newSpan = document.createElement("span");
+                newSpan.innerHTML = v[i];
+                data.appendChild(newSpan);
+            }
+        }
+    }
+
+    function addData(newData) {
+        var html = data.innerHTML;
+        data.innerHTML = "<span>" + newData + "</span>" + html;
+        str.push(newData);
+    }
+
+    search.onclick = function() {
+        var time = new Date().getTime();
+        var value = text.value;
+        if(value!=''){
+            localStorage.setItem(time, value);
+            refresh();
+            showData(valueStr);
+            text.value = '';
+        }
+    }
+
+    removeAll.onclick = function() {
+        if(confirm("请确认是否要删除")){
+            localStorage.clear();
+            data.innerHTML = '';
+            non.style.display = "block";
+        }
+    }
+
+    refresh();
+    showData(valueStr);
+</script>
+</html>

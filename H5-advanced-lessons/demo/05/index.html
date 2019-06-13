@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>同心圆、八卦</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+        #canvas2{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="400">
+        您的浏览器不支持 canvas 元素，请更换或更新浏览器
+    </canvas>
+    <canvas id="canvas2" width="400" height="400">
+        您的浏览器不支持 canvas 元素，请更换或更新浏览器
+    </canvas>
+</body>
+<script>
+    // 同心圆
+    var canvas=document.getElementById('canvas1');
+    var context=canvas.getContext("2d");
+    context.strokeStyle='blue';
+    for(var i=0;i<8;i++){
+        context.beginPath();
+        context.arc(0,400,i*50,0,1.5*Math.PI,true);
+       // context.closePath();
+        context.stroke();
+    }
+
+    // 八卦
+    var canvas1=document.getElementById('canvas2');
+    var context1=canvas1.getContext("2d");
+    
+    // 绘制白色的半圆
+    context1.beginPath();
+    context1.arc(200,200,80,1.5*Math.PI,0.5*Math.PI);
+    context1.fillStyle="white";
+    context1.closePath();
+    context1.fill();
+
+    // 绘制黑色半圆
+    context1.beginPath();
+    context1.arc(200,200,80,1.5*Math.PI,0.5*Math.PI,true);
+    context1.fillStyle="black";
+    context1.closePath();
+    context1.fill();
+
+    // 绘制白色小圆
+    context1.beginPath();
+    context1.arc(200,160,40,0,2*Math.PI);
+    context1.fillStyle="white";
+    context1.closePath();
+    context1.fill();
+
+    // 绘制黑色小圆
+    context1.beginPath();
+    context1.arc(200,240,40,0,2*Math.PI);
+    context1.fillStyle="black";
+    context1.closePath();
+    context1.fill();
+
+    // 绘制黑色小圆点
+    context1.beginPath();
+    context1.arc(200,160,6,0,2*Math.PI);
+    context1.fillStyle="black";
+    context1.closePath();
+    context1.fill();
+
+    // 绘制白色小圆点
+    context1.beginPath();
+    context1.arc(200,240,6,0,2*Math.PI);
+    context1.fillStyle="white";
+    context1.closePath();
+    context1.fill();
+
+</script>
+</html>
