@@ -53,7 +53,7 @@ body {
         height: 46px;
         line-height: 46px;
         padding: 0 40px;
-        background: url(https://file.htapi.pub/bighomework/tell.png) no-repeat left;
+        background: url(./img/tell.png) no-repeat left;
         font-size: 20px;
         font-weight: 340;
     }
@@ -150,7 +150,7 @@ body {
         font-size: 16px;
         display: block;
         padding-left: 66px;
-        background: url(https://file.htapi.pub/bighomework/position.png) no-repeat 28px center;
+        background: url(./img/position.png) no-repeat 28px center;
     }
 
     .o-carousel>.search>div:last-child {
@@ -165,7 +165,7 @@ body {
         width: 128px;
         height: 50px;
         display: block;
-        background: url(https://file.htapi.pub/bighomework/search.png) no-repeat center center;
+        background: url(./img/search.png) no-repeat center center;
     }
 
     .o-carousel>.search>input {
@@ -260,7 +260,7 @@ body {
         height: 365px;
         text-align: center;
         color: #fff;
-        background: url(https://file.htapi.pub/bighomework/car.png) no-repeat center 80px;
+        background: url(./img/car.png) no-repeat center 80px;
     }
 
     .o-banner>div>div:nth-child(3)>span:first-child {
@@ -472,7 +472,7 @@ body {
     .o-banner2 {
         height: 345px;
         width: 100%;
-        background: url(https://file.htapi.pub/bighomework/Bbanner.jpg) no-repeat;
+        background: url(./img/Bbanner.jpg) no-repeat;
         background-position: center;
         background-size: cover;
     }
@@ -481,7 +481,7 @@ body {
     .o-mission {
         height: 1498px;
         width: 100%;
-        background: url(https://file.htapi.pub/bighomework/back.png) no-repeat top center;
+        background: url(./img/back.png) no-repeat top center;
     }
 
     .o-mission>div:nth-child(1) {
@@ -504,7 +504,7 @@ body {
         height: 350px;
         width: 1203px;
         border-radius: 10px;
-        background: url(https://file.htapi.pub/bighomework/blue.png) no-repeat center;
+        background: url(./img/blue.png) no-repeat center;
     }
 
     .o-mission>div:nth-child(2)>img {
@@ -563,7 +563,7 @@ body {
         width: 310px;
         height: 300px;
         padding-top: 40px;
-        background: url(https://file.htapi.pub/bighomework/rorate.png) no-repeat center top;
+        background: url(./img/rorate.png) no-repeat center top;
     }
 
     .o-mission>div:nth-child(4)>div>div>span:nth-child(2) {
@@ -767,7 +767,7 @@ body {
         height: 365px;
         width: 750px;
         border-top: #434343 2px solid;
-        background: url(https://file.htapi.pub/bighomework/pbanner.png) no-repeat 0 top;
+        background: url(./img/pbanner.png) no-repeat 0 top;
     }
 
     .p-img .main {
@@ -814,7 +814,7 @@ body {
         font-size: 20px;
         display: block;
         padding-left: 68px;
-        background: url(https://file.htapi.pub/bighomework/position.png) no-repeat 30px center;
+        background: url(./img/position.png) no-repeat 30px center;
     }
 
     .p-img>.search>div:last-child {
@@ -829,7 +829,7 @@ body {
         width: 142px;
         height: 66px;
         display: block;
-        background: url(https://file.htapi.pub/bighomework/search.png) no-repeat center center;
+        background: url(./img/search.png) no-repeat center center;
     }
 
     .p-img>.search>input {
