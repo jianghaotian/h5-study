@@ -1008,6 +1008,18 @@ body {
         margin-top: 40px;
     }
 
+    .o-popular>div>div:nth-child(2) {
+        width: 668px;
+        height: 398px;
+        overflow: hidden;
+    }
+   
+    .o-popular>div>div:nth-child(2)>img {
+        position: absolute;
+        height: 520px;
+        bottom: 0;
+    }
+
     .o-visa-p {
         width: 750px;
         height: 98px;
