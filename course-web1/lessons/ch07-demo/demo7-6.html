@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>添加空元素clear:both清除浮动</title>
+    <style type="text/css">
+	    * {
+	        padding: 0;
+	        margin: 0;
+	    }
+
+	    body {
+	        padding: 150px;
+	    }
+
+	    div.parent {
+	        width: 400px;/*没有设置高度*/	    
+	        border:2px solid red;
+	        padding:5px;
+	    }
+
+	    img {
+	        float: left;
+	    }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <img src="images/33.JPG"  width="200" height="200" />
+        <p>小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮 小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮
+        </p>
+        <div style="clear:both;"></div> <!-- 不允许左右两边有浮动的元素 -->
+    </div>
+</body>
+
+</html>

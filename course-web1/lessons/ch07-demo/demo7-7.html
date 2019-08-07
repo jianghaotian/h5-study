@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>伪类:after + clear:both清除浮动</title>
+    <style type="text/css">
+	    * {
+	        padding: 0;
+	        margin: 0;
+	    }
+
+	    body {
+	        padding: 150px;
+	    }
+
+	    div.parent {
+	        width: 400px; /*没有设置高度*/
+	        border: 2px solid red;
+	        padding: 5px;
+	    }
+
+	    .clearfix:after {
+	        content: "";
+	        height: 0;
+	        display: block;
+	        /*block宽度会横向填充满屏幕，在父元素的最后追加一个height:0，占满屏幕的看不见的细长条,和添加空div元素原理相同*/
+	        clear: both;
+	    }
+
+	    img {
+	        float: left;
+	    }
+    </style>
+</head>
+
+<body>
+    <div class="parent clearfix">
+        <img src="images/33.JPG" width="200" height="200" />
+        <p>小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮 小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮小狗很可爱小狗很漂亮</p>
+    </div>
+</body>
+
+</html>
